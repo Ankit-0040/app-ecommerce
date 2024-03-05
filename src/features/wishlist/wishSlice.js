@@ -31,7 +31,7 @@ export const wishlistsSlice = createSlice({
             
             const updatedWishlists = state.wishlistsItems.filter((item) => item.id !== action.payload.id )
 
-            console.log('Updated wishlists:', updatedWishlists);
+            // console.log('Updated wishlists:', updatedWishlists);
             // state.wishlistsItems = updatedWishlists;
             return {
                 ...state,

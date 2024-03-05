@@ -6,7 +6,6 @@ import MySlider from "../Products/Slider";
 function Home() {
     const [data, setData] = useState({});
     const [searchTerm, setSearchTerm] = useState('');
-    
     useEffect(() => {
         fetch(`https://dummyjson.com/products`)
             .then((res) => res.json())
@@ -40,7 +39,9 @@ function Home() {
 
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '20px', justifyContent: 'center' }}>
                 {filteredProducts && filteredProducts.map(product => (
+                    
                     <ProductCard key={product.id} product={product} style={{ margin: '10px' }} />
+                   
                 ))}
             </div>
         </div>

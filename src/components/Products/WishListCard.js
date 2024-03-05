@@ -10,11 +10,12 @@ import IconButton from '@mui/material/IconButton';
 import { useDispatch } from 'react-redux';
 import { removeWishlist } from '../../features/wishlist/wishSlice';
 import { addToCart } from '../../features/cart/cartSlice';
-
+import { useHistory } from "react-router-dom";
 
 export default function WishListCard({ wishlist }) {
 
     const dispatch = useDispatch();
+    const history = useHistory();
 
     const removeWishlisthandler = () => {
         dispatch(removeWishlist(wishlist))
@@ -22,6 +23,7 @@ export default function WishListCard({ wishlist }) {
 
     const addToCartHandler = () => {
         dispatch(addToCart(wishlist))
+        history.push('/Cart');
     }
 
     return (

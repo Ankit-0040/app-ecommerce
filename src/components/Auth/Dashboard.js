@@ -13,7 +13,7 @@ function Dashboard() {
     <Router>
       <AuthProvider>
         <div>
-          <NavBar title="Shopping Cart" aboutText="About Us" />
+          <NavBar title="Shopping Cart" aboutText="About" />
           <div className="container my-3">
             <Switch>
               <Route exact path="/about">
