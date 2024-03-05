@@ -3,7 +3,7 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
-import { CardActionArea, CardActions } from '@mui/material';
+import { CardActionArea, CardActions, Tooltip } from '@mui/material';
 import RemoveCircleIcon from '@mui/icons-material/RemoveCircle';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import IconButton from '@mui/material/IconButton';
@@ -44,12 +44,16 @@ export default function WishListCard({ wishlist }) {
                 </CardContent>
             </CardActionArea>
             <CardActions>
+                <Tooltip title="Add to Cart" placement="left" >
                 <IconButton aria-label="add to cart" onClick = {() => addToCartHandler(wishlist)}>
                     <AddShoppingCartIcon />
                 </IconButton>
+                </Tooltip>
+                <Tooltip title="Remove " placement="right"  >
                 <IconButton aria-label="remove from wishlist" onClick={() => removeWishlisthandler(wishlist)}>
                     <RemoveCircleIcon  />
                 </IconButton>
+                </Tooltip>
             </CardActions>
         </Card>
         </div>

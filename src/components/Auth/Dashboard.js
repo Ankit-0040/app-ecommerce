@@ -6,6 +6,7 @@ import WishList from "../common/WhishList";
 import Cart from "../common/Cart";
 import LoginPage from "./LoginPage";
 import  AuthProvider  from "../../context/AuthProvider";
+import ProductPage from '../common/ProductPage';
 
 function Dashboard() {
   return (
@@ -29,6 +30,9 @@ function Dashboard() {
               </Route>
               <Route exact path="/login">
                 <LoginPage />
+              </Route>
+              <Route exact path="/productdetails/:id">
+                <ProductPage />
               </Route>
             </Switch>
           </div>

@@ -11,8 +11,8 @@ const LoginPage = () => {
 
   const handleLogin = () => {
    
-    if (username === 'admin' && password === 'admin') {
-      setUser({ username: 'admin' });
+    if (username === 'Ankit' && password === 'Ankit') {
+      setUser({ username: 'Ankit' });
       history.push('/');
     } else {
       alert('Invalid username or password');
