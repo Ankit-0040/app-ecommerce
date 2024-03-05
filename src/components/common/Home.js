@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, {  useEffect, useState } from "react";
 import ProductCard from "../Products/ProductCard";
 import TextField from '@mui/material/TextField';
 import MySlider from "../Products/Slider";
@@ -7,8 +7,6 @@ function Home() {
     const [data, setData] = useState({});
     const [searchTerm, setSearchTerm] = useState('');
     
-   
-
     useEffect(() => {
         fetch(`https://dummyjson.com/products`)
             .then((res) => res.json())
