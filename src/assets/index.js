@@ -1,0 +1,1 @@
+export { default as Ankit } from "./images/Ankit.jpg";

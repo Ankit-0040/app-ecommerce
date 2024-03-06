@@ -11,6 +11,7 @@ import { useDispatch } from 'react-redux';
 import { removeWishlist } from '../../features/wishlist/wishSlice';
 import { addToCart } from '../../features/cart/cartSlice';
 import { useHistory } from "react-router-dom";
+import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 
 export default function WishListCard({ wishlist }) {
 
@@ -30,6 +31,7 @@ export default function WishListCard({ wishlist }) {
         <div >
         <Card sx={{ maxWidth: 300, margin: '10px' }}>
             <CardActionArea>
+            <Link className="nav-link" to={`/productdetails/${wishlist.id}`} style={{ textDecoration: 'none' }}>
                 <CardMedia
                     component="img"
                     height="140"
@@ -44,6 +46,7 @@ export default function WishListCard({ wishlist }) {
                         {wishlist.description}
                     </Typography>
                 </CardContent>
+                </Link>
             </CardActionArea>
             <CardActions>
                 <Tooltip title="Add to Cart" placement="left" >

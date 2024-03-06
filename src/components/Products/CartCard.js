@@ -12,6 +12,7 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import { useDispatch } from 'react-redux';
 import { removeFromCart, increaseQuantity, decreaseQuantity } from '../../features/cart/cartSlice';
 import { Button, Grid, TextField } from '@mui/material';
+import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 
 function CartCard({ cart }) {
     const dispatch = useDispatch();
@@ -34,6 +35,7 @@ function CartCard({ cart }) {
         <Paper elevation={2} style={{ padding: "10px", margin: "10px" }}>
             <Grid container spacing={2}>
                 <Grid item xs={3}>
+                <Link className="nav-link" to={`/productdetails/${cart.id}`} style={{ textDecoration: 'none' }}>
                     <Card>
                         <CardMedia
                             component="img"
@@ -42,6 +44,7 @@ function CartCard({ cart }) {
                             alt=""
                         />
                     </Card>
+                    </Link>
                 </Grid>
                 <Grid item xs={6}>
                     <CardContent>

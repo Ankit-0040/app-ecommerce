@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, CardActions, CardContent, CardMedia, Typography, IconButton, Rating } from '@mui/material';
+import { Card, CardActions, CardContent, CardMedia, Typography, IconButton, Rating, Tooltip } from '@mui/material';
 import { Link } from 'react-router-dom';
 import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
@@ -45,12 +45,16 @@ export default function ProductCard({ product }) {
                 </CardContent>
             </Link>
             <CardActions>
+                <Tooltip title = 'Wishlist' placement='top'>
                 <IconButton aria-label="add to favorites" onClick={addToWishlist}>
                     <FavoriteBorderOutlinedIcon />
                 </IconButton>
+                </Tooltip>
+                <Tooltip title = 'Add to card' placement='top'>
                 <IconButton aria-label="add to cart" onClick={addToCartHandler}>
                     <AddShoppingCartIcon />
                 </IconButton>
+                </Tooltip>
             </CardActions>
         </Card>
     );
