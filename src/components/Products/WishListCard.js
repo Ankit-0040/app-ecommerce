@@ -24,7 +24,7 @@ export default function WishListCard({ wishlist }) {
 
     const addToCartHandler = () => {
         dispatch(addToCart(wishlist))
-        history.push('/Cart');
+        history.push('/cart');
     }
 
     return (

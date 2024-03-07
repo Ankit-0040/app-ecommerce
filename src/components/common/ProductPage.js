@@ -18,12 +18,12 @@ function ProductPage() {
 
   const addToCartHandler = () => {
     dispatch(addToCart(product))
-    history.push('/Cart');
+    history.push('/cart');
 }
 
 const addToWishlist = () => {
   dispatch(addToWishList(product));
-  history.push('/Wishlist');
+  history.push('/wishlist');
 }
 
   useEffect(() => {
