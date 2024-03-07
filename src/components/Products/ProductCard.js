@@ -14,12 +14,12 @@ export default function ProductCard({ product }) {
 
     const addToWishlist = () => {
         dispatch(addToWishList(product));
-        history.push('/Wishlist');
+        history.push('/wishlist');
     }
 
     const addToCartHandler = () => {
         dispatch(addToCart(product));
-        history.push('/Cart');
+        history.push('/cart');
     }
 
     return (
