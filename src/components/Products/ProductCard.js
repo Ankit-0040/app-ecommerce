@@ -7,6 +7,7 @@ import { useDispatch } from 'react-redux';
 import { addToWishList } from '../../features/wishlist/wishSlice';
 import { addToCart } from '../../features/cart/cartSlice';
 import { useHistory } from "react-router-dom";
+import '../css/ProductCard.css';
 
 export default function ProductCard({ product }) {
     const dispatch = useDispatch();
@@ -23,43 +24,38 @@ export default function ProductCard({ product }) {
     }
 
     return (
-        <Card sx={{ maxWidth: 300, margin: '10px' }}>
+        <Card className="product-card">
             <Link className="nav-link" to={`/productdetails/${product.id}`} style={{ textDecoration: 'none' }}>
                 <CardMedia
                     component="img"
                     height="140"
                     image={product.thumbnail}
                     alt={product.title}
+                    className="card-media"
                 />
-                <CardContent>
-                    <Typography gutterBottom variant="h5" component="div">
+                <CardContent className="card-content">
+                    <Typography gutterBottom variant="h5" component="div" className="card-title">
                         {product.title}
                     </Typography>
-                    <Typography variant="body2" color="text.secondary" style={{
-                        display: '-webkit-box',
-                        WebkitLineClamp: 2,
-                        overflow: 'hidden',
-                        maxHeight: '3em',
-                        textOverflow: 'ellipsis',
-                    }}>
+                    <Typography variant="body2" color="text.secondary" className="card-description">
                         {product.description}
                     </Typography>
-                    <Typography variant="body2" color="text.secondary">
+                    <Typography variant="body2" color="text.secondary" className="card-price">
                         <b>Price: ${product.price}</b>
                     </Typography>
-                    <Rating name="read-only" value={product.rating} readOnly />
+                    <Rating name="read-only" value={product.rating} readOnly className="card-rating" />
                 </CardContent>
             </Link>
-            <CardActions>
-                <Tooltip title = 'Wishlist' placement='top'>
-                <IconButton aria-label="add to favorites" onClick={addToWishlist}>
-                    <FavoriteBorderOutlinedIcon />
-                </IconButton>
+            <CardActions className="card-actions">
+                <Tooltip title="Wishlist" placement="top">
+                    <IconButton aria-label="add to favorites" onClick={addToWishlist}>
+                        <FavoriteBorderOutlinedIcon />
+                    </IconButton>
                 </Tooltip>
-                <Tooltip title = 'Add to card' placement='top'>
-                <IconButton aria-label="add to cart" onClick={addToCartHandler}>
-                    <AddShoppingCartIcon />
-                </IconButton>
+                <Tooltip title="Add to cart" placement="top">
+                    <IconButton aria-label="add to cart" onClick={addToCartHandler}>
+                        <AddShoppingCartIcon />
+                    </IconButton>
                 </Tooltip>
             </CardActions>
         </Card>

@@ -20,7 +20,7 @@ function Home() {
     });
 
     return (
-        <div>
+        <div className="home-container">
             <div className="search">
                 <TextField
                     id="standard-search"

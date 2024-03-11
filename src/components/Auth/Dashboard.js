@@ -39,7 +39,7 @@ function MainContent() {
   return (
     <div>
       <NavBar title="Shopping Cart" aboutText="About" />
-      <div className="container my-3">
+      <div>
         <Switch>
           <Route exact path="/about">
             <About />

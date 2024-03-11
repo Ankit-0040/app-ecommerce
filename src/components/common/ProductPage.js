@@ -19,12 +19,12 @@ function ProductPage() {
   const addToCartHandler = () => {
     dispatch(addToCart(product))
     history.push('/cart');
-}
+  }
 
-const addToWishlist = () => {
-  dispatch(addToWishList(product));
-  history.push('/wishlist');
-}
+  const addToWishlist = () => {
+    dispatch(addToWishList(product));
+    history.push('/wishlist');
+  }
 
   useEffect(() => {
     fetch(`https://dummyjson.com/products/${id}`)
@@ -36,16 +36,16 @@ const addToWishlist = () => {
   if (!product) {
     return <div>Loading...</div>;
   }
- 
+
 
   return (
     <div>
       <Card style={{ padding: 20 }}>
-      <Typography variant="h4" gutterBottom>
-        {product.title}
-      </Typography>
+        <Typography variant="h4" gutterBottom>
+          {product.title}
+        </Typography>
         <Grid container>
-        
+
           <Grid item md={6}>
             <Carousel showArrows={true} showThumbs={true}>
               {
@@ -57,7 +57,7 @@ const addToWishlist = () => {
           </Grid>
 
           <Grid item md={6} style={{ padding: 20 }}>
-          
+
             <Typography variant="h6" gutterBottom>
               Description
             </Typography>
@@ -68,19 +68,19 @@ const addToWishlist = () => {
               Price
             </Typography>
             <Typography variant="body1" paragraph>
-              ${product.price} 
-             
+              ${product.price}
+
             </Typography>
             <Typography variant="h6" gutterBottom>
-              Rating 
+              Rating
             </Typography>
             <Typography>
-            <Rating name="read-only" value={product.rating} readOnly />
+              <Rating name="read-only" value={product.rating} readOnly />
             </Typography>
-            
+
             <Grid container spacing={2} justifyContent="flex-start" style={{ marginTop: '10px' }}>
               <Grid item>
-                <Button variant="contained" color="primary" onClick = {addToCartHandler}>
+                <Button variant="contained" color="primary" onClick={addToCartHandler}>
                   Add to Cart <AddShoppingCartIcon />
                 </Button>
               </Grid>
@@ -90,12 +90,12 @@ const addToWishlist = () => {
                 </Button>
               </Grid>
             </Grid>
-              {/* <p>Description: {product.description}</p>
+            {/* <p>Description: {product.description}</p>
               <p>Price: ${product.price}</p>
               <p>Rating: {product.rating}</p> */}
-           
-              </Grid>
+
           </Grid>
+        </Grid>
       </Card>
 
 

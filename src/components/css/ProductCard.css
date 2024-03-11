@@ -1,0 +1,57 @@
+.product-card {
+    max-width: 300px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-media {
+    height: 140px;
+}
+
+.card-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-title {
+    height: 20%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.card-description {
+    height: 40%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; 
+    -webkit-box-orient: vertical;
+}
+
+.card-price {
+    height: 10%;
+}
+
+.card-rating {
+    height: 20%;
+}
+
+.card-actions {
+    height: 10%;
+    /* justify-content: center; */
+}
+
+
+@media (max-width: 600px) {
+    .product-card {
+        max-width: 100%;
+    }
+    
+    .card-media {
+        height: auto;
+    }
+}

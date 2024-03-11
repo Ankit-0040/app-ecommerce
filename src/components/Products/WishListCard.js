@@ -12,6 +12,7 @@ import { removeWishlist } from '../../features/wishlist/wishSlice';
 import { addToCart } from '../../features/cart/cartSlice';
 import { useHistory } from "react-router-dom";
 import { Link } from 'react-router-dom/cjs/react-router-dom.min';
+import '../css/WishList.css'
 
 export default function WishListCard({ wishlist }) {
 
@@ -29,38 +30,38 @@ export default function WishListCard({ wishlist }) {
 
     return (
         <div >
-        <Card sx={{ maxWidth: 300, margin: '10px' }}>
-            <CardActionArea>
-            <Link className="nav-link" to={`/productdetails/${wishlist.id}`} style={{ textDecoration: 'none' }}>
-                <CardMedia
-                    component="img"
-                    height="140"
-                    image={wishlist.thumbnail}
-                    alt=""
-                />
-                <CardContent>
-                    <Typography gutterBottom variant="h5" component="div">
-                        {wishlist.title}
-                    </Typography>
-                    <Typography variant="body2" color="text.secondary">
-                        {wishlist.description}
-                    </Typography>
-                </CardContent>
-                </Link>
-            </CardActionArea>
-            <CardActions>
-                <Tooltip title="Add to Cart" placement="left" >
-                <IconButton aria-label="add to cart" onClick = {() => addToCartHandler(wishlist)}>
-                    <AddShoppingCartIcon />
-                </IconButton>
-                </Tooltip>
-                <Tooltip title="Remove " placement="right"  >
-                <IconButton aria-label="remove from wishlist" onClick={() => removeWishlisthandler(wishlist)}>
-                    <RemoveCircleIcon  />
-                </IconButton>
-                </Tooltip>
-            </CardActions>
-        </Card>
+            <Card className="wishlist-card">
+                <CardActionArea>
+                    <Link className="nav-link" to={`/productdetails/${wishlist.id}`} style={{ textDecoration: 'none' }}>
+                        <CardMedia
+                            component="img"
+                            height="140"
+                            image={wishlist.thumbnail}
+                            alt=""
+                        />
+                        <CardContent className="wishlist-card-content">
+                            <Typography gutterBottom variant="h5" component="div" className="wishlist-card-title" >
+                                {wishlist.title}
+                            </Typography>
+                            <Typography variant="body2" color="text.secondary" className="wishlist-card-description">
+                                {wishlist.description}
+                            </Typography>
+                        </CardContent>
+                    </Link>
+                </CardActionArea>
+                <CardActions>
+                    <Tooltip title="Add to Cart" placement="left" >
+                        <IconButton aria-label="add to cart" onClick={() => addToCartHandler(wishlist)}>
+                            <AddShoppingCartIcon />
+                        </IconButton>
+                    </Tooltip>
+                    <Tooltip title="Remove " placement="right"  >
+                        <IconButton aria-label="remove from wishlist" onClick={() => removeWishlisthandler(wishlist)}>
+                            <RemoveCircleIcon />
+                        </IconButton>
+                    </Tooltip>
+                </CardActions>
+            </Card>
         </div>
     );
 }

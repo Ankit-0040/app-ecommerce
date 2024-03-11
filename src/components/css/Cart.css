@@ -1,0 +1,30 @@
+.cart-card {
+    padding: 10px;
+    margin: 10px;
+  }
+  
+  @media (max-width: 600px) {
+    .cart-card {
+      padding: 5px;
+      margin: 5px;
+    }
+  }
+  
+  .cart-container {
+    margin: 0px 20px 20px 20px;
+  }
+  
+  .cart-heading {
+    text-align: center;
+    background-color: aliceblue;
+  }
+  
+  .cart-total {
+    text-align: end;
+  }
+  
+  .clear-cart {
+    text-align: center;
+    margin-top: 20px;
+  }
+  

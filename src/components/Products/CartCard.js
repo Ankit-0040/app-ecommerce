@@ -13,6 +13,7 @@ import { useDispatch } from 'react-redux';
 import { removeFromCart, increaseQuantity, decreaseQuantity } from '../../features/cart/cartSlice';
 import { Button, Grid, TextField } from '@mui/material';
 import { Link } from 'react-router-dom/cjs/react-router-dom.min';
+import '../css/Cart.css'
 
 function CartCard({ cart }) {
     const dispatch = useDispatch();
@@ -32,18 +33,18 @@ function CartCard({ cart }) {
     };
 
     return (
-        <Paper elevation={2} style={{ padding: "10px", margin: "10px" }}>
+        <Paper elevation={2} className='cart-card'>
             <Grid container spacing={2}>
                 <Grid item xs={3}>
-                <Link className="nav-link" to={`/productdetails/${cart.id}`} style={{ textDecoration: 'none' }}>
-                    <Card>
-                        <CardMedia
-                            component="img"
-                            height="200"
-                            image={cart.thumbnail}
-                            alt=""
-                        />
-                    </Card>
+                    <Link className="nav-link" to={`/productdetails/${cart.id}`} >
+                        <Card>
+                            <CardMedia
+                                component="img"
+                                height="200"
+                                image={cart.thumbnail}
+                                alt=""
+                            />
+                        </Card>
                     </Link>
                 </Grid>
                 <Grid item xs={6}>
@@ -61,23 +62,23 @@ function CartCard({ cart }) {
                             Price: ${cart.price}
                         </Typography>
                         <div>
-                        <Tooltip title="Remove from cart" placement="right">
-                            <Button aria-label="remove from cart" onClick={() => removefromCartHandler(cart)}>
-                                Remove
-                            <DeleteIcon />
-                            </Button>
-                        </Tooltip>
-                       
+                            <Tooltip title="Remove from cart" placement="right">
+                                <Button aria-label="remove from cart" onClick={() => removefromCartHandler(cart)}>
+                                    Remove
+                                    <DeleteIcon />
+                                </Button>
+                            </Tooltip>
+
                         </div>
                     </CardContent>
                 </Grid>
                 <Grid item xs={3} container justifyContent="center" alignItems="center">
                     <IconButton onClick={increaseQuantityHandler}>
-                    <KeyboardArrowUpIcon />
+                        <KeyboardArrowUpIcon />
                     </IconButton>
-                    <TextField id="outlined-basic" value={cart.quantity} variant="outlined" size="small" sx={{ maxWidth: '50px' }}  />
+                    <TextField id="outlined-basic" value={cart.quantity} variant="outlined" size="small" sx={{ maxWidth: '50px' }} />
                     <IconButton onClick={decreaseQuantityHandler}>
-                    <KeyboardArrowDownIcon />
+                        <KeyboardArrowDownIcon />
                     </IconButton>
                 </Grid>
             </Grid>
